@@ -1,12 +1,10 @@
 name: Publish
-
 on:
   workflow_run:
     workflows: [ "CI" ]
     branches: [ master ]
     types:
       - completed
-
 jobs:
   publish:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -21,6 +19,5 @@ jobs:
           scope: '@garvae'
       - run: yarn
       - run: yarn publish
-      - uses: JS-DevTools/npm-publish@v3
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
