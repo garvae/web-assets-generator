@@ -28,7 +28,7 @@
     "publish": "npm publish",
     "run:lib": "cross-env DEV=true node dist/index.js",
     "test": "cross-env NODE_ENV=test jest",
-    "version:patch": "npm version patch && node scripts/plugin-version-update.js"
+    "version:patch": "npm version patch"
   },
   "keywords": [
     "assets",
