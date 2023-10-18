@@ -27,6 +27,7 @@ const config = {
     '!<rootDir>/cache/',
     '!<rootDir>/config/',
     '!<rootDir>/dist/',
+    '!<rootDir>/bin/',
     '!<rootDir>/docs/',
     '!<rootDir>/node_modules/',
     '!<rootDir>/output/',

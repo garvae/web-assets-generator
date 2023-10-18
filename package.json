@@ -26,7 +26,7 @@
     "prepare": "yarn install:husky",
     "pretest": "node config/jest/utils/clear-cache.js",
     "publish": "npm publish",
-    "run:lib": "cross-env DEV=true node dist/index.js",
+    "run:lib": "cross-env DEV=true node bin/index.js",
     "test": "cross-env NODE_ENV=test jest",
     "version:patch": "npm version patch"
   },
@@ -39,7 +39,7 @@
     "tags",
     "web"
   ],
-  "bin": "dist/index.js",
+  "bin": "bin/index.js",
   "dependencies": {
     "cli-real-favicon": "^0.0.8"
   },

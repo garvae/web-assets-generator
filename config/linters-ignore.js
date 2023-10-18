@@ -10,6 +10,7 @@ exports.ignore = [
   './.idea',
   './_backup',
   './dist',
+  './bin',
   './node_modules',
   './npm-debug.log',
   './package-lock.json',

@@ -32,7 +32,7 @@ export const WAG = (props: TRunWAG) => {
     const VAR_APP_USER_ROOT = path.resolve(rootUser, 'web-assets-generator');
     const VAR_APP_ROOT = path.resolve(path.dirname(__filename), '../');
 
-    const VAR_APP_LIB_DIR = path.resolve(VAR_APP_ROOT, 'dist');
+    const VAR_APP_LIB_DIR = path.resolve(VAR_APP_ROOT, 'bin');
     const VAR_APP_LIB_DIR_SCRIPTS = path.resolve(VAR_APP_LIB_DIR, 'scripts');
     const VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK = path.resolve(VAR_APP_LIB_DIR_SCRIPTS, 'icons-pack');
 

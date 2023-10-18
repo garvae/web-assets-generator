@@ -7,7 +7,7 @@ const path = require("path");
 
 const ROOT = process.cwd()
 const PATH_SOURCE = path.resolve(ROOT, 'lib')
-const PATH_DIST = path.resolve(ROOT, 'dist')
+const PATH_DIST = path.resolve(ROOT, 'bin')
 
 /**
  * Clone lib dir

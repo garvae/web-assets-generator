@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
-    "outDir": "dist",
+    "outDir": "bin",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,

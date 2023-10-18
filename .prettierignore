@@ -4,6 +4,7 @@
 .gitignore
 .husky
 .idea
+bin
 dist
 node_modules
 npm-debug.log
