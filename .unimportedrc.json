@@ -1,0 +1,12 @@
+{
+  "entry": ["dist/index.js"],
+  "ignoreUnused": ["cli-real-favicon"],
+  "ignorePatterns": [
+    "**/lib/**",
+    "**/node_modules/**",
+    "jest.config.js",
+    "config/**",
+    "scripts/**",
+    "temp/**"
+  ]
+}

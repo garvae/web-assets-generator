@@ -1,0 +1,13 @@
+**/__IGNORE__/**
+.DS_Store
+.git
+.gitignore
+.husky
+.idea
+dist
+node_modules
+npm-debug.log
+package-lock.json
+reports
+temp
+yarn.lock

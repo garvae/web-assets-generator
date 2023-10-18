@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "lib/**/*",
+    "doc/**/*",
+    "config/**/*",
+  ],
+  "exclude": [
+    "_other",
+    "build",
+    "cache",
+    "dist",
+    "coverage",
+    "node_modules",
+    "output"
+  ]
+}
