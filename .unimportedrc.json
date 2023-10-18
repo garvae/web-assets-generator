@@ -2,7 +2,9 @@
   "entry": ["dist/index.js"],
   "ignoreUnused": ["cli-real-favicon"],
   "ignorePatterns": [
+    "dist/types.js",
     "**/lib/**",
+    "**/dist/types/**",
     "**/node_modules/**",
     "jest.config.js",
     "config/**",
