@@ -39,9 +39,7 @@
     "tags",
     "web"
   ],
-  "bin": {
-    "web-assets-generator": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "dependencies": {
     "cli-real-favicon": "^0.0.8"
   },
