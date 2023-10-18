@@ -14,9 +14,6 @@
     "url": "https://github.com/garvae/web-assets-generator/issues"
   },
   "homepage": "https://github.com/garvae/web-assets-generator#readme",
-  "engines": {
-    "node": "^16.15.0 || >= 18.0.0"
-  },
   "version": "1.0.0",
   "scripts": {
     "build-and-run-locally-node": "yarn compile && yarn run:lib",
