@@ -6,7 +6,7 @@
 import { consoleError } from './console';
 import {
   generateErrorMessage,
-  TGenerateErrorMessage, 
+  TGenerateErrorMessage,
 } from './generate-error-message';
 
 
@@ -19,7 +19,7 @@ export type TShowConsoleError = TGenerateErrorMessage & {
 };
 
 /**
- * Extended console.log
+ * Extended console.error
  *
  * @param props
  */

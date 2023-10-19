@@ -22,6 +22,13 @@ export const generateWebAndFrameworksSecondaryAssets = (props: TWagCtx) => {
   const { outputLib } = paths;
   const outputLibFrameworks = `${outputLib}/frameworks`;
 
+  const contentLintersIgnoreCommon = LINTERS_IGNORE_DEFAULTS
+    .join('\n')
+    .replaceAll('\'', '');
+
+  console.log('----------- contentLintersIgnoreCommon', contentLintersIgnoreCommon);
+  console.log('----------- LINTERS_IGNORE_DEFAULTS', LINTERS_IGNORE_DEFAULTS);
+
   /**
    * ----------------------------------------------------------------
    * Frameworks assets generating
@@ -35,10 +42,7 @@ export const generateWebAndFrameworksSecondaryAssets = (props: TWagCtx) => {
    * when you manually configure files to watch in the WebStorm settings
    */
   if (config.assets.framework.eslintignore) {
-    const content = LINTERS_IGNORE_DEFAULTS
-      .join('\n')
-      .replaceAll('\'', '')
-      .replaceAll('"', '');
+    const content = contentLintersIgnoreCommon.replaceAll('"', '');
 
     const targetName = '.eslintignore';
 
@@ -55,10 +59,7 @@ export const generateWebAndFrameworksSecondaryAssets = (props: TWagCtx) => {
    * The purpose of this is to automate the creation of core files
    */
   if (config.assets.framework.prettierignore) {
-    const content = LINTERS_IGNORE_DEFAULTS
-      .join('\n')
-      .replaceAll('\'', '')
-      .replaceAll('./', '');
+    const content = contentLintersIgnoreCommon.replaceAll('./', '');
 
     const targetName = '.prettierignore';
 

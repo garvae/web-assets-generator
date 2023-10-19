@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PWAAGCleanTemp = exports.PWAAGCopyImages = exports.generatePWAAGHtml = void 0;
-const tslib_1 = require("tslib");
-const fs_1 = tslib_1.__importDefault(require("fs"));
+const fs_1 = __importDefault(require("fs"));
 const delete_dir_recursive_1 = require("../../../utils/delete-dir-recursive");
 const generate_file_1 = require("../../../utils/generate-file");
 const list_dir_files_1 = require("../../../utils/list-dir-files");

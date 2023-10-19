@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "isolatedModules": true,
     "lib": ["esnext"],
     "module": "commonjs",

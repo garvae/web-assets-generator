@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WAG = void 0;
-const tslib_1 = require("tslib");
-const path_1 = tslib_1.__importDefault(require("path"));
+const path_1 = __importDefault(require("path"));
 const generators_1 = require("./scripts/generators");
 const icons_pack_1 = require("./scripts/icons-pack");
 const comment_empty_tags_1 = require("./scripts/index-html/comment-empty-tags");
@@ -20,7 +22,7 @@ const WAG = (props) => {
     if ((0, string_1.isStringAndNotEmpty)(configPath) && (0, string_1.isStringAndNotEmpty)(rootUser)) {
         const VAR_APP_USER_ROOT = path_1.default.resolve(rootUser, 'web-assets-generator');
         const VAR_APP_ROOT = path_1.default.resolve(path_1.default.dirname(__filename), '../');
-        const VAR_APP_LIB_DIR = path_1.default.resolve(VAR_APP_ROOT, 'dist');
+        const VAR_APP_LIB_DIR = path_1.default.resolve(VAR_APP_ROOT, 'bin');
         const VAR_APP_LIB_DIR_SCRIPTS = path_1.default.resolve(VAR_APP_LIB_DIR, 'scripts');
         const VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK = path_1.default.resolve(VAR_APP_LIB_DIR_SCRIPTS, 'icons-pack');
         const VAR_APP_OUTPUT_PATH_ASSETS_RELATIVE = './assets';

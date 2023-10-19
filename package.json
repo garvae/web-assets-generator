@@ -18,6 +18,7 @@
   "scripts": {
     "build-and-run-locally-node": "yarn compile && yarn run:lib",
     "clear:jest-cache": "jest --clearCache",
+    "compile-and-llink": "tsc && npm unlink -g @garvae/web-assets-generator && npm unlink -g web-assets-generator && npm link",
     "compile": "tsc",
     "find-deadcode": "npx --yes unimported --no-cache",
     "install:husky": "[ ! -d \"/node_modules/is-ci/\" ] || is-ci || [ ! -d \"/node_modules/husky/\" ] || husky install",

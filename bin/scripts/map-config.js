@@ -1,9 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mapConfig = void 0;
-const tslib_1 = require("tslib");
-const fs_1 = tslib_1.__importDefault(require("fs"));
-const path_1 = tslib_1.__importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const config_1 = require("../defaults/config");
 const console_1 = require("../utils/console");
 const deep_merge_safe_1 = require("../utils/deep-merge-safe");
@@ -29,7 +31,6 @@ const getPathAbsFromUserRoot = (p, rootUser) => {
  */
 const mapConfig = (props) => {
     const { configPath, errBase, rootUser, } = props;
-    console.log('mapConfig rootUser', rootUser);
     const config = JSON.parse(fs_1.default.readFileSync(configPath, 'utf-8'));
     if (!config) {
         (0, throw_error_1.throwError)(errBase);

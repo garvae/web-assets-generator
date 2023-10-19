@@ -9,10 +9,12 @@
  *
  * @author Garvae
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateFaviconBundle = void 0;
-const tslib_1 = require("tslib");
-const fs_1 = tslib_1.__importDefault(require("fs"));
+const fs_1 = __importDefault(require("fs"));
 const console_1 = require("../../utils/console");
 const ensure_directory_exists_1 = require("../../utils/ensure-directory-exists");
 const execute_1 = require("../../utils/execute");

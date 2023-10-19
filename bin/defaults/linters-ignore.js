@@ -11,6 +11,7 @@ exports.LINTERS_IGNORE_DEFAULTS = [
     './.gitignore',
     './.husky',
     './.idea',
+    './bin',
     './dist',
     './node_modules',
     './npm-debug.log',

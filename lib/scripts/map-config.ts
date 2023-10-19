@@ -49,8 +49,6 @@ export const mapConfig = (props: TMapConfig): TConfigApp | undefined => {
     rootUser,
   } = props;
 
-  console.log('mapConfig rootUser', rootUser);
-
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
   if (!config) {

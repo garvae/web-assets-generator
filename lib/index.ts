@@ -40,6 +40,9 @@ const getErrorNotFound = (props?: TShowErrorNotFound) => {
   const VAR_APP_ROOT_USER = process.cwd();
   const isDev = process.env.DEV === 'true';
 
+  console.log('--------------- VAR_APP_ROOT_USER', VAR_APP_ROOT_USER);
+  console.log('--------------- isDev', isDev);
+
   if (!isStringAndNotEmpty(VAR_APP_ROOT_USER)) {
     throwError('A critical error occured while app running');
     return;

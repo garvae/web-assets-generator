@@ -14,6 +14,11 @@ const generateWebAndFrameworksSecondaryAssets = (props) => {
     const { config, names, paths, } = props;
     const { outputLib } = paths;
     const outputLibFrameworks = `${outputLib}/frameworks`;
+    const contentLintersIgnoreCommon = linters_ignore_1.LINTERS_IGNORE_DEFAULTS
+        .join('\n')
+        .replaceAll('\'', '');
+    console.log('----------- contentLintersIgnoreCommon', contentLintersIgnoreCommon);
+    console.log('----------- LINTERS_IGNORE_DEFAULTS', linters_ignore_1.LINTERS_IGNORE_DEFAULTS);
     /**
      * ----------------------------------------------------------------
      * Frameworks assets generating
@@ -26,10 +31,7 @@ const generateWebAndFrameworksSecondaryAssets = (props) => {
      * when you manually configure files to watch in the WebStorm settings
      */
     if (config.assets.framework.eslintignore) {
-        const content = linters_ignore_1.LINTERS_IGNORE_DEFAULTS
-            .join('\n')
-            .replaceAll('\'', '')
-            .replaceAll('"', '');
+        const content = contentLintersIgnoreCommon.replaceAll('"', '');
         const targetName = '.eslintignore';
         (0, generate_file_1.generateFile)({
             content,
@@ -43,10 +45,7 @@ const generateWebAndFrameworksSecondaryAssets = (props) => {
      * The purpose of this is to automate the creation of core files
      */
     if (config.assets.framework.prettierignore) {
-        const content = linters_ignore_1.LINTERS_IGNORE_DEFAULTS
-            .join('\n')
-            .replaceAll('\'', '')
-            .replaceAll('./', '');
+        const content = contentLintersIgnoreCommon.replaceAll('./', '');
         const targetName = '.prettierignore';
         (0, generate_file_1.generateFile)({
             content,

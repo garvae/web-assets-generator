@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateFaviconMarkups = void 0;
-const tslib_1 = require("tslib");
-const fs_1 = tslib_1.__importDefault(require("fs"));
+const fs_1 = __importDefault(require("fs"));
 const list_dir_files_1 = require("../../../utils/list-dir-files");
 const vars_1 = require("../../../vars");
 const regAppleMobileWebAppTitle = /<meta name="apple-mobile-web-app-title".*/gm;
