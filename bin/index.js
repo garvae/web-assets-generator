@@ -28,7 +28,7 @@ const getErrorNotFound = (props) => {
  * WEB-assets-generator runner
  */
 (() => {
-    const VAR_APP_ROOT_USER = `"${process.cwd()}"`;
+    const VAR_APP_ROOT_USER = process.cwd();
     const isDev = process.env.DEV === 'true';
     if (!(0, string_1.isStringAndNotEmpty)(VAR_APP_ROOT_USER)) {
         (0, throw_error_1.throwError)('A critical error occured while app running');

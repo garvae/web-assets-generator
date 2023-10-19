@@ -37,7 +37,7 @@ const getErrorNotFound = (props?: TShowErrorNotFound) => {
  */
 (() => {
 
-  const VAR_APP_ROOT_USER = `"${process.cwd()}"`;
+  const VAR_APP_ROOT_USER = process.cwd();
   const isDev = process.env.DEV === 'true';
 
   if (!isStringAndNotEmpty(VAR_APP_ROOT_USER)) {
