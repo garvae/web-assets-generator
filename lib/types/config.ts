@@ -1,5 +1,3 @@
-import { DeepPartial } from './utils';
-
 
 type TConfigMeta = {
   appleMobileWebAppCapable: string;
@@ -10,7 +8,6 @@ type TConfigMeta = {
   formatDetection: string;
   htmlLang: string;
   linkRelSearchTitle: string;
-  maskIcon: string;
   mobileWebAppCapable: string;
   msapplicationNavbuttonColor: string;
   msapplicationStarturl: string;
@@ -91,7 +88,6 @@ type TConfigTokensMain = {
   authorUrl: string;
   description: string;
   language: string;
-  languageOg: string;
   msapplicationTileColor: string;
   name: string;
   siteUrl: string;
@@ -105,5 +101,3 @@ export type TConfigApp = {
   outputDir: string;
   tokensMain: TConfigTokensMain;
 };
-
-export type TConfigClient = DeepPartial<TConfigApp>;

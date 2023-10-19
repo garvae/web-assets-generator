@@ -1,5 +1,7 @@
 name: CI
-on: [push]
+on:
+  release:
+    types: [published]
 jobs:
   test-job:
     runs-on: ubuntu-latest

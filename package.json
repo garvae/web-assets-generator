@@ -1,6 +1,6 @@
 {
   "name": "@garvae/web-assets-generator",
-  "description": "Generate all meta tags, favicon bundle and other assets for your web project",
+  "description": "Generate all HTML meta tags, favicon bundle and other assets for your web project",
   "author": "Vova Garvae",
   "license": "SEE LICENSE IN THE 'LICENCE' FILE",
   "repository": {

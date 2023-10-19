@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 
 import { APP_CONFIG_DEFAULTS } from '../defaults/config';
 import { TConfigApp } from '../types/config';
@@ -13,20 +14,31 @@ import {
 import { throwError } from '../utils/throw-error';
 
 
+const errorPathNotExists = (p: string) => consoleError(`The path ${p} doesn't exists`);
+
 /**
  * Resolves a path from a user root
  */
 const getPathAbsFromUserRoot = (p: string | undefined, rootUser: string): string => {
-  let pathAbs = p;
+  let pathResolved = p;
 
-  if (isStringAndNotEmpty(pathAbs)) {
-    pathAbs = pathResolve(rootUser, pathAbs);
+  if (isStringAndNotEmpty(pathResolved)) {
+    if (path.isAbsolute(pathResolved)) {
+      if (fs.existsSync(pathResolved)) {
+        return pathResolved;
+      }
 
-    if (fs.existsSync(pathAbs)) {
-      return pathAbs;
+      errorPathNotExists(pathResolved);
+      return '';
     }
 
-    consoleError(`The path ${pathAbs} doesn't exists`);
+    pathResolved = pathResolve(rootUser, pathResolved);
+
+    if (fs.existsSync(pathResolved)) {
+      return pathResolved;
+    }
+
+    errorPathNotExists(pathResolved);
   }
 
   return '';
@@ -68,7 +80,9 @@ export const mapConfig = (props: TMapConfig): TConfigApp | undefined => {
 
   const resolver = (p: string) => getPathAbsFromUserRoot(p, rootUser);
 
-  const outputDir = pathResolve(rootUser, configMapped.outputDir);
+  const outputDirConfig = configMapped.outputDir;
+
+  const outputDir = path.isAbsolute(outputDirConfig) ? outputDirConfig : pathResolve(rootUser, configMapped.outputDir);
 
   ensureDirectoryExists({ pathAbs: outputDir });
 
