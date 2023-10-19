@@ -161,7 +161,7 @@ const WAG = (props) => {
             /**
              * Format public dir using prettier
              */
-            (0, execute_1.execute)(`npx prettier ${CTX.paths.outputLib} --write`);
+            (0, execute_1.execute)(`npx prettier "${CTX.paths.outputLib}" --write`);
         }
         catch (err) {
             cleanup();

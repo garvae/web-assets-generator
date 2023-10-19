@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 import fs from 'fs';
-import path from 'path';
 
 import { pathResolve } from './utils/path';
 import { isStringAndNotEmpty } from './utils/string';
@@ -38,7 +37,7 @@ const getErrorNotFound = (props?: TShowErrorNotFound) => {
  */
 (() => {
 
-  const VAR_APP_ROOT_USER = path.normalize(process.cwd());
+  const VAR_APP_ROOT_USER = `"${process.cwd()}"`;
   const isDev = process.env.DEV === 'true';
 
   if (!isStringAndNotEmpty(VAR_APP_ROOT_USER)) {

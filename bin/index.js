@@ -5,8 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
-const path_1 = __importDefault(require("path"));
-const path_2 = require("./utils/path");
+const path_1 = require("./utils/path");
 const string_1 = require("./utils/string");
 const throw_error_1 = require("./utils/throw-error");
 const wag_1 = require("./wag");
@@ -29,7 +28,7 @@ const getErrorNotFound = (props) => {
  * WEB-assets-generator runner
  */
 (() => {
-    const VAR_APP_ROOT_USER = path_1.default.normalize(process.cwd());
+    const VAR_APP_ROOT_USER = `"${process.cwd()}"`;
     const isDev = process.env.DEV === 'true';
     if (!(0, string_1.isStringAndNotEmpty)(VAR_APP_ROOT_USER)) {
         (0, throw_error_1.throwError)('A critical error occured while app running');
@@ -42,7 +41,7 @@ const getErrorNotFound = (props) => {
     /**
      * Default WAG config path
      */
-    const WAG_CONFIG_FILE_PATH_DEFAULT = (0, path_2.pathResolve)(VAR_APP_ROOT_USER, VAR_APP_CONFIG_FILE_NAME_DEFAULT);
+    const WAG_CONFIG_FILE_PATH_DEFAULT = (0, path_1.pathResolve)(VAR_APP_ROOT_USER, VAR_APP_CONFIG_FILE_NAME_DEFAULT);
     if (isDev || ARGS.length < 1) {
         if (!fs_1.default.existsSync(WAG_CONFIG_FILE_PATH_DEFAULT)) {
             (0, throw_error_1.throwError)(getErrorNotFound());

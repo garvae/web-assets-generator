@@ -54,16 +54,16 @@ export const generatePWAAGConfig = (ctx: TWagCtx) => {
   }
 
   if (isStringAndNotEmpty(pathOverride)) {
-    PWA_ASSET_GENERATOR_COMMAND_OPTIONS.push(`--path-override ${pathOverride}`);
+    PWA_ASSET_GENERATOR_COMMAND_OPTIONS.push(`--path-override "${pathOverride}"`);
   }
 
   if (isStringAndNotEmpty(index)) {
-    PWA_ASSET_GENERATOR_COMMAND_OPTIONS.push(`--index ${index}`);
+    PWA_ASSET_GENERATOR_COMMAND_OPTIONS.push(`--index "${index}"`);
   }
 
   if (isStringAndNotEmpty(type)) {
     PWA_ASSET_GENERATOR_COMMAND_OPTIONS.push(`--type ${type}`);
   }
 
-  return `npx --yes pwa-asset-generator ${config.assets.favicon.input} ${pwaag.paths.output} ${PWA_ASSET_GENERATOR_COMMAND_OPTIONS.join(' ')}`;
+  return `npx --yes pwa-asset-generator "${config.assets.favicon.input}" "${pwaag.paths.output}" ${PWA_ASSET_GENERATOR_COMMAND_OPTIONS.join(' ')}`;
 };

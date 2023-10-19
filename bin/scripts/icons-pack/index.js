@@ -71,7 +71,7 @@ const generateFaviconBundle = (ctx) => {
         targetPath: realFaviconConfig,
         tryCatchOptions: { errMessageTitle: 'real-favicon. An error occurred while preparing config file for the real-favicon plugin' },
     });
-    (0, execute_1.execute)(`real-favicon generate ${realFaviconConfig} ${realFaviconDataFile} ${realFaviconOutput}`);
+    (0, execute_1.execute)(`real-favicon generate "${realFaviconConfig}" "${realFaviconDataFile}" "${realFaviconOutput}"`);
     (0, console_1.consoleInfo)('The second asset generation tool has been completed. Asset generation continues, please wait...');
     /**
      * Copy files generated with real-favicon plugin

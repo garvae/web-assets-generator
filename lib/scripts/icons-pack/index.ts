@@ -14,7 +14,7 @@ import fs from 'fs';
 import { TWagCtx } from '../../types';
 import {
   consoleError,
-  consoleInfo, 
+  consoleInfo,
 } from '../../utils/console';
 import { ensureDirectoryExists } from '../../utils/ensure-directory-exists';
 import { execute } from '../../utils/execute';
@@ -96,7 +96,7 @@ export const generateFaviconBundle = (ctx: TWagCtx) => {
     targetPath: realFaviconConfig,
     tryCatchOptions: { errMessageTitle: 'real-favicon. An error occurred while preparing config file for the real-favicon plugin' },
   });
-  execute(`real-favicon generate ${realFaviconConfig} ${realFaviconDataFile} ${realFaviconOutput}`);
+  execute(`real-favicon generate "${realFaviconConfig}" "${realFaviconDataFile}" "${realFaviconOutput}"`);
   consoleInfo('The second asset generation tool has been completed. Asset generation continues, please wait...');
 
   /**

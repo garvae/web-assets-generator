@@ -8,5 +8,5 @@ const path_1 = __importDefault(require("path"));
 /**
  * Extended path.resolve
  */
-const pathResolve = (...paths) => path_1.default.normalize(path_1.default.resolve(...paths));
+const pathResolve = (...paths) => path_1.default.resolve(...paths);
 exports.pathResolve = pathResolve;

@@ -194,7 +194,7 @@ export const WAG = (props: TRunWAG) => {
       /**
        * Format public dir using prettier
        */
-      execute(`npx prettier ${CTX.paths.outputLib} --write`);
+      execute(`npx prettier "${CTX.paths.outputLib}" --write`);
     } catch (err) {
       cleanup();
       throwError(err);
