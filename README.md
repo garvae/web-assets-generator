@@ -325,14 +325,6 @@ or there is not enough of them, and I will be glad to see your [issues][issue] o
 ✨️ More files for frameworks <br/>
 
 
-## 💎 Recommendations
-
-<br/>
-
-- Read about ["multiline-comment-style" rule](https://ru.reactjs.org/docs/design-principles.html) by Teddy Katz. `no-line-comments` by [@Garvae](https://sprd.li/4wr38watys) and `multiline-comment-style` by Teddy Katz can complement each other
-
-<br/>
-
 ## 🤝 Contributions
 
 <br/>
@@ -341,14 +333,13 @@ or there is not enough of them, and I will be glad to see your [issues][issue] o
 Feel free to check [issues page][issue] and [pull request page][pull request].
 
 
-
-❤️ **Give a ⭐ if you like this project!**
+❤️ **Give a** ⭐ **if you like this project!**
 
 <br/>
 
 ## 🚀 Mentoring
 
-### If you want to grow 🚀 fast in front-end development - [contact me! 🙋‍♂][garvae]
+**If you want to grow** 🚀 **fast in front-end development - [contact me!][garvae]**  🙋‍♂
 
 <br/>
 
