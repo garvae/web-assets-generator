@@ -8,6 +8,7 @@ import { checkMetaCoverSocials } from './scripts/meta-cover-socials';
 import { TWagCtx } from './types';
 import { deleteDirRecursive } from './utils/delete-dir-recursive';
 import { execute } from './utils/execute';
+import { pathResolve } from './utils/path';
 import { isStringAndNotEmpty } from './utils/string';
 import { throwError } from './utils/throw-error';
 
@@ -29,23 +30,23 @@ export const WAG = (props: TRunWAG) => {
   } = props;
 
   if (isStringAndNotEmpty(configPath) && isStringAndNotEmpty(rootUser)) {
-    const VAR_APP_USER_ROOT = path.resolve(rootUser, 'web-assets-generator');
-    const VAR_APP_ROOT = path.resolve(path.dirname(__filename), '../');
+    const VAR_APP_USER_ROOT = pathResolve(rootUser, 'web-assets-generator');
+    const VAR_APP_ROOT = pathResolve(path.dirname(__filename), '../');
 
-    const VAR_APP_LIB_DIR = path.resolve(VAR_APP_ROOT, 'bin');
-    const VAR_APP_LIB_DIR_SCRIPTS = path.resolve(VAR_APP_LIB_DIR, 'scripts');
-    const VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK = path.resolve(VAR_APP_LIB_DIR_SCRIPTS, 'icons-pack');
+    const VAR_APP_LIB_DIR = pathResolve(VAR_APP_ROOT, 'bin');
+    const VAR_APP_LIB_DIR_SCRIPTS = pathResolve(VAR_APP_LIB_DIR, 'scripts');
+    const VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK = pathResolve(VAR_APP_LIB_DIR_SCRIPTS, 'icons-pack');
 
     const VAR_APP_OUTPUT_PATH_ASSETS_RELATIVE = './assets';
     const VAR_APP_OUTPUT_PATH_ASSETS_IMAGES_RELATIVE = `${VAR_APP_OUTPUT_PATH_ASSETS_RELATIVE}/images`;
-    const VAR_APP_OUTPUT_PATH_ASSETS_ABSOLUTE = path.resolve(VAR_APP_USER_ROOT, VAR_APP_OUTPUT_PATH_ASSETS_RELATIVE);
+    const VAR_APP_OUTPUT_PATH_ASSETS_ABSOLUTE = pathResolve(VAR_APP_USER_ROOT, VAR_APP_OUTPUT_PATH_ASSETS_RELATIVE);
 
-    const VAR_APP_PLUGINS_TEMP = path.resolve(VAR_APP_USER_ROOT, 'temp');
+    const VAR_APP_PLUGINS_TEMP = pathResolve(VAR_APP_USER_ROOT, 'temp');
 
     const VAR_APP_PLUGIN_PWAAG_NAME = 'pwaag';
     const VAR_APP_PLUGIN_PWAAG_IMAGES_EXTENSION = 'png';
-    const VAR_APP_PLUGIN_PWAAG_DIR_ROOT = path.resolve(VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK, VAR_APP_PLUGIN_PWAAG_NAME);
-    const VAR_APP_PLUGIN_PWAAG_DIR_OUTPUT = path.resolve(VAR_APP_PLUGINS_TEMP, VAR_APP_PLUGIN_PWAAG_NAME);
+    const VAR_APP_PLUGIN_PWAAG_DIR_ROOT = pathResolve(VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK, VAR_APP_PLUGIN_PWAAG_NAME);
+    const VAR_APP_PLUGIN_PWAAG_DIR_OUTPUT = pathResolve(VAR_APP_PLUGINS_TEMP, VAR_APP_PLUGIN_PWAAG_NAME);
 
     const VAR_APP_PLUGIN_REALFAVICON_NAME = 'real-favicon';
 
@@ -58,8 +59,8 @@ export const WAG = (props: TRunWAG) => {
       'svg',
       'ico',
     ];
-    const VAR_APP_PLUGIN_REALFAVICON_DIR_ROOT = path.resolve(VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK, VAR_APP_PLUGIN_REALFAVICON_NAME);
-    const VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT = path.resolve(VAR_APP_PLUGINS_TEMP, VAR_APP_PLUGIN_REALFAVICON_NAME);
+    const VAR_APP_PLUGIN_REALFAVICON_DIR_ROOT = pathResolve(VAR_APP_LIB_DIR_SCRIPTS_ICONS_PACK, VAR_APP_PLUGIN_REALFAVICON_NAME);
+    const VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT = pathResolve(VAR_APP_PLUGINS_TEMP, VAR_APP_PLUGIN_REALFAVICON_NAME);
 
     const VAR_APP_FILE_NAME_HTML_INDEX = 'index.html';
 
@@ -77,10 +78,10 @@ export const WAG = (props: TRunWAG) => {
       } },
       outputImgsExtensionPreferred: 'png',
       paths: {
-        indexHtml: path.resolve(VAR_APP_USER_ROOT, VAR_APP_FILE_NAME_HTML_INDEX),
+        indexHtml: pathResolve(VAR_APP_USER_ROOT, VAR_APP_FILE_NAME_HTML_INDEX),
         outputLib: VAR_APP_USER_ROOT,
         outputLibAssets: VAR_APP_OUTPUT_PATH_ASSETS_ABSOLUTE,
-        outputLibAssetsImages: path.resolve(VAR_APP_USER_ROOT, VAR_APP_OUTPUT_PATH_ASSETS_IMAGES_RELATIVE),
+        outputLibAssetsImages: pathResolve(VAR_APP_USER_ROOT, VAR_APP_OUTPUT_PATH_ASSETS_IMAGES_RELATIVE),
         rootLib: VAR_APP_ROOT,
         rootUser,
       },
@@ -92,7 +93,7 @@ export const WAG = (props: TRunWAG) => {
           },
           name: VAR_APP_PLUGIN_PWAAG_NAME,
           paths: {
-            indexHtml: path.resolve(VAR_APP_PLUGIN_PWAAG_DIR_OUTPUT, 'index.html'),
+            indexHtml: pathResolve(VAR_APP_PLUGIN_PWAAG_DIR_OUTPUT, 'index.html'),
             output: VAR_APP_PLUGIN_PWAAG_DIR_OUTPUT,
             override: VAR_APP_OUTPUT_PATH_ASSETS_IMAGES_RELATIVE,
             root: VAR_APP_PLUGIN_PWAAG_DIR_ROOT,
@@ -109,10 +110,10 @@ export const WAG = (props: TRunWAG) => {
             manifest: 'site.webmanifest',
           } },
           paths: {
-            config: path.resolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, 'config.json'),
-            indexHtml: path.resolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, VAR_APP_PLUGIN_REALFAVICON_HTML_INDEX),
+            config: pathResolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, 'config.json'),
+            indexHtml: pathResolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, VAR_APP_PLUGIN_REALFAVICON_HTML_INDEX),
             output: VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT,
-            outputDataFile: path.resolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, 'data.json'),
+            outputDataFile: pathResolve(VAR_APP_PLUGIN_REALFAVICON_DIR_OUTPUT, 'data.json'),
             override: VAR_APP_OUTPUT_PATH_ASSETS_IMAGES_RELATIVE,
             root: VAR_APP_PLUGIN_REALFAVICON_DIR_ROOT,
           },

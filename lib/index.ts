@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
+import { pathResolve } from './utils/path';
 import { isStringAndNotEmpty } from './utils/string';
 import { throwError } from './utils/throw-error';
 import { WAG } from './wag';
@@ -37,11 +38,8 @@ const getErrorNotFound = (props?: TShowErrorNotFound) => {
  */
 (() => {
 
-  const VAR_APP_ROOT_USER = process.cwd();
+  const VAR_APP_ROOT_USER = path.normalize(process.cwd());
   const isDev = process.env.DEV === 'true';
-
-  console.log('--------------- VAR_APP_ROOT_USER', VAR_APP_ROOT_USER);
-  console.log('--------------- isDev', isDev);
 
   if (!isStringAndNotEmpty(VAR_APP_ROOT_USER)) {
     throwError('A critical error occured while app running');
@@ -56,7 +54,7 @@ const getErrorNotFound = (props?: TShowErrorNotFound) => {
   /**
    * Default WAG config path
    */
-  const WAG_CONFIG_FILE_PATH_DEFAULT = path.resolve(VAR_APP_ROOT_USER, VAR_APP_CONFIG_FILE_NAME_DEFAULT);
+  const WAG_CONFIG_FILE_PATH_DEFAULT = pathResolve(VAR_APP_ROOT_USER, VAR_APP_CONFIG_FILE_NAME_DEFAULT);
 
 
   if (isDev || ARGS.length < 1) {

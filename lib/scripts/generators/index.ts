@@ -26,9 +26,6 @@ export const generateWebAndFrameworksSecondaryAssets = (props: TWagCtx) => {
     .join('\n')
     .replaceAll('\'', '');
 
-  console.log('----------- contentLintersIgnoreCommon', contentLintersIgnoreCommon);
-  console.log('----------- LINTERS_IGNORE_DEFAULTS', LINTERS_IGNORE_DEFAULTS);
-
   /**
    * ----------------------------------------------------------------
    * Frameworks assets generating

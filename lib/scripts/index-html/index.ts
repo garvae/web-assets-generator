@@ -1,11 +1,11 @@
-import path from 'path';
 
 import { TWagCtx } from '../../types';
 import { generateFile } from '../../utils/generate-file';
+import { pathResolve } from '../../utils/path';
 
 import {
   generateTemplate,
-  TGenerateTemplate, 
+  TGenerateTemplate,
 } from './html-template/template';
 
 type TGenerateHtmlIndex = Pick<TGenerateTemplate, 'faviconMarkups'> & {
@@ -29,7 +29,7 @@ export const generateHtmlIndex = (props: TGenerateHtmlIndex) => {
     paths,
   } = ctx;
 
-  const INDEX_HTML_PATH = path.resolve(paths.outputLib, names.files.indexHtml);
+  const INDEX_HTML_PATH = pathResolve(paths.outputLib, names.files.indexHtml);
 
   const tokens = {
     ...config.assets.indexHtml.tokensMeta,
@@ -38,7 +38,7 @@ export const generateHtmlIndex = (props: TGenerateHtmlIndex) => {
 
   let indexHtmlRaw = generateTemplate({
     faviconMarkups,
-    preLoader: config.assets.indexHtml.preLoader, 
+    preLoader: config.assets.indexHtml.preLoader,
   });
 
   Object

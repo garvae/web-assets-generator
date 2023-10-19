@@ -17,8 +17,6 @@ const generateWebAndFrameworksSecondaryAssets = (props) => {
     const contentLintersIgnoreCommon = linters_ignore_1.LINTERS_IGNORE_DEFAULTS
         .join('\n')
         .replaceAll('\'', '');
-    console.log('----------- contentLintersIgnoreCommon', contentLintersIgnoreCommon);
-    console.log('----------- LINTERS_IGNORE_DEFAULTS', linters_ignore_1.LINTERS_IGNORE_DEFAULTS);
     /**
      * ----------------------------------------------------------------
      * Frameworks assets generating

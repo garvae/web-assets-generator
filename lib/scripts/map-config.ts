@@ -1,11 +1,11 @@
 import fs from 'fs';
-import path from 'path';
 
 import { APP_CONFIG_DEFAULTS } from '../defaults/config';
 import { TConfigApp } from '../types/config';
 import { consoleError } from '../utils/console';
 import { deepMergeSafe } from '../utils/deep-merge-safe';
 import { ensureDirectoryExists } from '../utils/ensure-directory-exists';
+import { pathResolve } from '../utils/path';
 import {
   isStringAndNotEmpty,
   getColorHexaOrEmptyStr,
@@ -20,7 +20,7 @@ const getPathAbsFromUserRoot = (p: string | undefined, rootUser: string): string
   let pathAbs = p;
 
   if (isStringAndNotEmpty(pathAbs)) {
-    pathAbs = path.resolve(rootUser, pathAbs);
+    pathAbs = pathResolve(rootUser, pathAbs);
 
     if (fs.existsSync(pathAbs)) {
       return pathAbs;
@@ -68,7 +68,7 @@ export const mapConfig = (props: TMapConfig): TConfigApp | undefined => {
 
   const resolver = (p: string) => getPathAbsFromUserRoot(p, rootUser);
 
-  const outputDir = path.resolve(rootUser, configMapped.outputDir);
+  const outputDir = pathResolve(rootUser, configMapped.outputDir);
 
   ensureDirectoryExists({ pathAbs: outputDir });
 
