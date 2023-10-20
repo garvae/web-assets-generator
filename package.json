@@ -2,7 +2,7 @@
   "name": "@garvae/web-assets-generator",
   "description": "Generate all HTML meta tags, favicon bundle and other assets for your web project. Simple. With just one tool.",
   "author": "Garvae",
-  "license": "See license in the \"LICENCE\" file",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/garvae/web-assets-generator.git"
