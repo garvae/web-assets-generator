@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       agreement:
-        description: Run manually?
+        description: "Run manually?"
         type: choice
           options:
-            - yes
-            - no
-        default: no
+            - "yes"
+            - "no"
+        default: "no"
         required: true
 
   workflow_run:
