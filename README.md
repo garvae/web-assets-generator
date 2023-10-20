@@ -205,6 +205,8 @@ After this there will be a detailed description of all config parameters.
 }
 ```
 
+<br/>
+
 ### Config parameters with descriptions and default values
 
 
@@ -300,6 +302,8 @@ After this there will be a detailed description of all config parameters.
 }
 ```
 
+<br/>
+
 ## 📄 HTML meta tags
 
 [web-assets-generator][repo] generates all (or almost all) [HTML meta tags][w3s-meta] for your web projects.
@@ -309,6 +313,8 @@ For your convenience, you can find descriptions of meta tags in the comments in 
 At this point, you can define values for meta tags in the `wag.config.json` config.
 Regardless of the presence of values in the config, all meta tags in the `index.html` file will be generated.
 However, those meta tags for which values will not be passed will be commented out.
+
+<br/>
 
 ## 📦 Favicon bundle
 
@@ -335,6 +341,7 @@ or there is not enough of them, and I will be glad to see your [issues][issue] o
 ✨️ Config for the [pwa-asset-generator] <br/>
 ✨️ More files for frameworks <br/>
 
+<br/>
 
 ## 🤝 Contributions
 
@@ -342,6 +349,8 @@ or there is not enough of them, and I will be glad to see your [issues][issue] o
 Feel free to check [issues page][issue] and [pull request page][pr].
 
 ❤️ **Give a** ⭐ **if you like this project!**
+
+<br/>
 
 ## 📞 Contact me
 
@@ -362,10 +371,13 @@ Feel free to check [issues page][issue] and [pull request page][pr].
 - [**LinkedIn**][linkedin]
 - [**GitHub**][github]
 
+<br/>
 
 ## 🚀 Mentoring
 
 **If you want to grow** 🚀 **fast in front-end development - [contact me!][garvae]**  🙋‍♂
+
+<br/>
 
 ## 📄 License
 

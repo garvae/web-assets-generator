@@ -1,8 +1,7 @@
 name: Publish
 on:
   workflow_dispatch:
-    branches:
-      - main
+    branches: [ master ]
     inputs:
       agreement:
         description: "Run manually?"
