@@ -41,5 +41,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print echo publish
-          shell: bash
           run: echo 'PUBLISH WORKFLOW'
