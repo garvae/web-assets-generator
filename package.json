@@ -14,7 +14,7 @@
     "url": "https://github.com/garvae/web-assets-generator/issues"
   },
   "homepage": "https://github.com/garvae/web-assets-generator#web-assets-generator",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "scripts": {
     "build-and-run-locally-node": "yarn compile && yarn run:lib",
     "clear:jest-cache": "jest --clearCache",
