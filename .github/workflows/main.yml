@@ -37,4 +37,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print echo main
-          run: echo 'MAIN WORKFLOW'
+        run: echo 'MAIN WORKFLOW'
