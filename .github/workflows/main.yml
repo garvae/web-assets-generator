@@ -3,36 +3,30 @@ on:
   release:
     types: [published]
 jobs:
-  test-job:
-    runs-on: ubuntu-latest
+  check:
+    name: Check on Node ${{ matrix.node }} and ${{ matrix.os }}
+    run: echo "TEST ACTION"
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['18.x']
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
     steps:
-      - name: test
-        run: echo "Hello World!"
-#jobs:
-#  check:
-#    name: Check on Node ${{ matrix.node }} and ${{ matrix.os }}
-#    run: echo "TEST ACTION"
-#
-#    runs-on: ${{ matrix.os }}
-#    strategy:
-#      matrix:
-#        node: ['18.x']
-#        os: [ubuntu-latest, windows-latest, macOS-latest]
-#
-#    steps:
-#      - name: Checkout repo
-#        uses: actions/checkout@v3
-#
-#      - name: Use Node ${{ matrix.node }}
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: ${{ matrix.node }}
-#
-#      - name: Install deps
-#        uses: bahmutov/npm-install@v1
-#
-#      - name: Lint
-#        run: yarn lint
-#
-#      - name: Test
-#        run: yarn test
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install deps
+        uses: bahmutov/npm-install@v1
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
