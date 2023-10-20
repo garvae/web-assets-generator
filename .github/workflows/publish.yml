@@ -1,6 +1,16 @@
 name: Publish
 on:
   workflow_dispatch:
+    inputs:
+      agreement:
+        description: Run manually?
+        type: choice
+          options:
+            - yes
+            - no
+        default: no
+        required: true
+
   workflow_run:
     workflows: [ "CI" ]
     branches: [ master ]
@@ -8,7 +18,7 @@ on:
       - completed
 jobs:
   publish:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.inputs.agreement == 'yes' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
