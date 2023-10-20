@@ -1,8 +1,8 @@
 {
   "name": "@garvae/web-assets-generator",
-  "description": "Generate all HTML meta tags, favicon bundle and other assets for your web project",
-  "author": "Vova Garvae",
-  "license": "SEE LICENSE IN THE 'LICENCE' FILE",
+  "description": "Generate all HTML meta tags, favicon bundle and other assets for your web project. Simple. With just one tool.",
+  "author": "Garvae",
+  "license": "See license in the \"LICENCE\" file",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/garvae/web-assets-generator.git"
@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/garvae/web-assets-generator/issues"
   },
-  "homepage": "https://github.com/garvae/web-assets-generator#readme",
+  "homepage": "https://github.com/garvae/web-assets-generator#web-assets-generator",
   "version": "1.0.8",
   "scripts": {
     "build-and-run-locally-node": "yarn compile && yarn run:lib",
@@ -33,10 +33,13 @@
     "version:patch": "npm version patch"
   },
   "keywords": [
+    "SEO",
     "assets",
+    "automatically",
     "bundle",
     "favicon",
     "generator",
+    "html",
     "meta",
     "tags",
     "web"
