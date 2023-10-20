@@ -1,5 +1,25 @@
 name: Publish
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Publish manually'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tags:
+        description: 'Publish manually'
+        required: false
+        type: boolean
+      environment:
+        description: 'Publish manually'
+        type: environment
+        required: true
+
   workflow_run:
     workflows: [ "CI" ]
     branches: [ master ]
