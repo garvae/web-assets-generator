@@ -1,6 +1,6 @@
 # WEB assets generator
 
-Generate all HTML meta tags, favicon bundle and other assets for your web project
+Generate **all HTML meta tags**, **favicon bundle** and **other assets** for your web project. Simple. **With just one tool**.
 
 <br/>
 
@@ -100,7 +100,9 @@ npx --yes @garvae/web-assets-generator ./any-folder/config.json
 
 ## 💎 Demo
 
-1. Download demo directory
+1. Download [demo pack](https://github.com/garvae/web-assets-generator/blob/master/demo/demo.zip?raw=true) and extract it
+2. Open the console and go to the directory with the files from the `demo pack`
+3. Follow the instructions for steps #2 and #3 from the 🚀 [**Usage**](https://github.com/garvae/web-assets-generator/tree/master#-usage) section above.
 
 <br/>
 
