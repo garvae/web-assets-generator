@@ -7,9 +7,9 @@ on:
       agreement:
         description: "Run manually?"
         type: choice
-          options:
-            - "yes"
-            - "no"
+        options:
+          - "yes"
+          - "no"
         default: "no"
         required: true
 
