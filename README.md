@@ -4,9 +4,11 @@ Generate all HTML meta tags, favicon bundle and other assets for your web projec
 
 <br/>
 
+<hr/>
+
 ## ✨ What can be generated?
 
-### Common WEB files:
+### Common WEB files
 
 ✔️ index.html with (almost) all [HTML \<meta> Tags][w3s-meta] <br/>
 ✔️ [Favicon](https://www.seoptimer.com/blog/what-is-a-favicon/) bundle <br/>
@@ -17,16 +19,16 @@ Generate all HTML meta tags, favicon bundle and other assets for your web projec
 ✔️ [search.xml](https://developer.mozilla.org/en-US/docs/Web/OpenSearch#opensearch_description_file) <br/>
 ✔️ [site.webmanifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) <br/>
 
-### Frameworks files:
+### Frameworks files
 
 ✔️ [.eslintignore](https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file) <br/>
 ✔️ [.prettierignore](https://prettier.io/docs/en/ignore.html#ignoring-files-prettierignore) <br/>
 
 <br/>
 
-> [**web-assets-generator**][wag] can generate different files and meta tags. 
+> [**web-assets-generator**][repo] can generate different files and meta tags. 
 > Keeping all the settings up to date is quite difficult,
-> so if you find a bug, please open an [issue] or make a [pull request] 🙏
+> so if you find a bug, please open an [issue] or make a [pull request][pr] 🙏
 
 
 <br/>
@@ -36,7 +38,7 @@ Generate all HTML meta tags, favicon bundle and other assets for your web projec
 Developers and SEO specialists often need to deal with the description of [HTML \<meta> Tags][w3s-meta] 
 and the generation of favicon image bundles. 
 It is convenient when **all these tasks are solved by one simple tool**.
-This is why the [**web-assets-generator**][wag] was created.
+This is why the [**web-assets-generator**][repo] was created.
 This tool collects all (or almost all) relevant [HTML \<meta> Tags][w3s-meta],
 and also generates the most complete bundle of favicon-images 
 using 2 great tools under the hood ([realfavicongenerator] & [pwa-asset-generator]),
@@ -47,12 +49,12 @@ As a result, the user receives a generated bundle of the main files used in web 
 
 ## 🚀 Usage
 
-1. Create a config file for the [web-assets-generator][wag]. 
+1. Create a config file for the [web-assets-generator][repo]. 
  
 > The file should have `.json` extension and its name should be `wag.config.json` by default.
 > If you want to name the config file differently, then you need to specify your file in the `СLI` command
 
-Since the [web-assets-generator][wag] tool can generate different combinations of assets,
+Since the [web-assets-generator][repo] tool can generate different combinations of assets,
 you need to specify at least one generated asset in the config.
 More details about the config are described in the section (TODO: SECTION).
 But one of the simplest options is below:
@@ -73,7 +75,7 @@ But one of the simplest options is below:
 
 2. Run [**npx**][npx]-command:
 
-If you want to confirm installation of the [web-assets-generator][wag] manually:
+If you want to confirm installation of the [web-assets-generator][repo] manually:
 
 ```shell
 npx @garvae/web-assets-generator
@@ -93,6 +95,12 @@ npx --yes @garvae/web-assets-generator ./any-folder/config.json
 
 3. Wait patiently for assets generation to complete. The generated files will be located in the path specified in the config or in the default `./web-assets-generator` directory.
 
+
+<br/>
+
+## 💎 Demo
+
+1. Download demo directory
 
 <br/>
 
@@ -219,7 +227,7 @@ After this there will be a detailed description of all config parameters.
         "applicationName": "", // The name of the web app.
         "description": "", // A short description of the page (for search engine optimization (SEO) purposes) that may be displayed in search engine results
         "formatDetection": "", // Disable automatic detection and formatting of telephone numbers by mobile devices. This can be useful if you don't want phone numbers on your website to be clickable and initiate phone calls.
-        "htmlLang": "", // The language of the element's content.
+        "htmlLang": "en-US", // The language of the element's content.
         "linkRelSearchTitle": "", // This tag is used to specify the URL of an OpenSearch description document, which provides information about the site's search capabilities.
         "mobileWebAppCapable": "", // Enables a web application to run in full-screen mode on Android devices.
         "msapplicationNavbuttonColor": "", // The color for the navigation bar in the Windows Edge browser.
@@ -290,9 +298,9 @@ After this there will be a detailed description of all config parameters.
 }
 ```
 
-## 🌌 HTML meta tags
+## 📄 HTML meta tags
 
-[web-assets-generator][wag] generates all (or almost all) [HTML meta tags][w3s-meta] for your web projects.
+[web-assets-generator][repo] generates all (or almost all) [HTML meta tags][w3s-meta] for your web projects.
 
 For your convenience, you can find descriptions of meta tags in the comments in the `index.html` file.
 
@@ -302,23 +310,24 @@ However, those meta tags for which values will not be passed will be commented o
 
 ## 📦 Favicon bundle
 
-[web-assets-generator][wag] generates the most complete bundle of favicon-images
+[web-assets-generator][repo] generates the most complete bundle of favicon-images
 using 2 great tools under the hood ([realfavicongenerator] & [pwa-asset-generator]).
 
-At the moment, [web-assets-generator][wag] does not provide the ability to customize the settings of these tools, however, this may be implemented in the future.
+At the moment, [web-assets-generator][repo] does not provide the ability to customize the settings of these tools, however, this may be implemented in the future.
 
 There is a lot of information on the topic of favicons on the Internet,
 but collecting all this information into a single standardized document is quite difficult.
-However, [web-assets-generator][wag] collects the most optimal (in the opinion of the author)
+However, [web-assets-generator][repo] collects the most optimal (in the opinion of the author)
 bundle of favicon images and immediately inserts the corresponding tags into the index.html.
 If you think that some favicons are unnecessary, or incorrect,
-or there is not enough of them, and I will be glad to see your [issues][issue] or [pull requests][pull request] 🙏.
+or there is not enough of them, and I will be glad to see your [issues][issue] or [pull requests][pr] 🙏.
 
 <br/>
 
-## ✨ Features that may be developed in the future
+## ✨ Future plans
 
 ✨️ Excluding meta tags not passed in the config <br/>
+✨️ Receiving reviews from SEO specialists and improving generated meta tags <br/>
 ✨️ Customizable `index.html` minifier <br/>
 ✨️ Config for the [realfavicongenerator] <br/>
 ✨️ Config for the [pwa-asset-generator] <br/>
@@ -327,54 +336,67 @@ or there is not enough of them, and I will be glad to see your [issues][issue] o
 
 ## 🤝 Contributions
 
-<br/>
-
 🤝 Contributions, issues and feature requests are welcome! <br/>
-Feel free to check [issues page][issue] and [pull request page][pull request].
-
+Feel free to check [issues page][issue] and [pull request page][pr].
 
 ❤️ **Give a** ⭐ **if you like this project!**
 
-<br/>
+## 📞 Contact me
+
+### 🌐 [Contact page][garvae]
+
+### 🔳 QR code
+
+<div style="background-color: white; display: inline-block; margin-top: 2em; margin-bottom: 2em">
+    <img src="https://github.com/garvae/assets/blob/master/assets/img/garvae-contacts.png?raw=true" alt="contact me" width="300px" height="300px">
+</div>
+
+### 🔗 Links
+
+- [**E-mail**][email]
+- [**Telegram**][telegram]
+- [**Facebook**][facebook]
+- [**Instagram**][instagram]
+- [**LinkedIn**][linkedin]
+- [**GitHub**][github]
+
 
 ## 🚀 Mentoring
 
 **If you want to grow** 🚀 **fast in front-end development - [contact me!][garvae]**  🙋‍♂
 
-<br/>
+## 📄 License
 
-### 📞 My contacts
+[See license in the "**LICENCE**" file][license]
 
-- [E-mail](vgarvae@gmail.com)
-- [Telegram](https://t.me/garvae)
-- [Facebook](https://www.facebook.com/garvae)
-- [Instagram](https://www.instagram.com/garvae)
-- [LinkedIn](https://linkedin.com/in/garvae)
-- [GitHub](https://github.com/garvae)
+[//]: # (------------------------------------------------------------------)
+[//]: # (------------------------- Document links -------------------------)
+[//]: # (------------------------------------------------------------------)
 
-<br/>
+[//]: # (--------------------------- repo links ---------------------------)
 
-#### ... or use QR below 🔳
-
-<div style="background-color: white; display: inline-block; margin-top: 2em; margin-bottom: 2em">
-    <img src="assets/img/png/garvae-contacts.png" alt="contacts" width="300px" height="300px">
-</div>
-
-#### ... or [this link 🌐][garvae]
-
-<br/>
-
-## 📄 [License - MIT](https://github.com/garvae/web-assets-generator/blob/master/LICENSE)
-
-
-[//]: # (---------------------- Document common links ----------------------)
-
-
-[garvae]:https://sprd.li/4wr38watys
-[issue]:https://github.com/garvae/web-assets-generator/issues
 [npx]:https://www.geeksforgeeks.org/what-are-the-differences-between-npm-and-npx/
-[pull request]:https://github.com/garvae/web-assets-generator/pulls
 [pwa-asset-generator]:https://github.com/elegantapp/pwa-asset-generator
 [realfavicongenerator]:https://realfavicongenerator.net/
 [w3s-meta]:https://www.w3schools.com/tags/tag_meta.asp
-[wag]:https://github.com/garvae/web-assets-generator
+
+
+[//]: # (-------------------------- common links --------------------------)
+
+[issue]:https://github.com/garvae/web-assets-generator/issues
+[pr]:https://github.com/garvae/web-assets-generator/pulls
+[repo]:https://github.com/garvae/web-assets-generator
+[license]:https://github.com/garvae/web-assets-generator/blob/master/LICENSE?raw=true
+
+[//]: # (---------------------------- contacts ----------------------------)
+
+[garvae]:https://sprd.li/4wr38watys
+[email]:vgarvae@gmail.com
+[telegram]:https://t.me/garvae
+[facebook]:https://www.facebook.com/garvae
+[instagram]:https://www.instagram.com/garvae
+[linkedin]:https://linkedin.com/in/garvae
+[github]:https://github.com/garvae
+
+[//]: # (------------------------------------------------------------------)
+[//]: # (------------------------------------------------------------------)

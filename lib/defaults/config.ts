@@ -19,7 +19,7 @@ export const APP_CONFIG_DEFAULTS: TConfigApp = {
         applicationName: '',
         description: '',
         formatDetection: '',
-        htmlLang: '',
+        htmlLang: 'en-US',
         linkRelSearchTitle: '',
         mobileWebAppCapable: '',
         msapplicationNavbuttonColor: '',
